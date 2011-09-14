@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var WebSocketHook = require('../lib/hookws').HookSocket;
+
+var mtgoxTest = new WebSocketHook({
+  name: 'mtgox',
+  url:'ws://websocket.mtgox.com/mtgox',
+  debug:true
+});
+
+mtgoxTest.start();

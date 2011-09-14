@@ -1,7 +1,7 @@
 {
   "author": "Daniel Aristizabal <aristizabal.daniel@gmail.com>",
   "name": "hook.io-ws",
-  "description": "hook for websocket connection"
+  "description": "hook for websocket connection",
   "version": "0.0.1",
   "repository": {
     "type": "git",
@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "hook.io": "0.6.x"
-  }
+  },
   "devDependencies": {}
 }
