@@ -5,7 +5,7 @@ Based on [Peter Griess](https://github.com/pgriess/node-websocket-client) work. 
 
 ## Requirements
  - [nodejs](http://nodejs.org)
- _ [npm](http://npmjs.org)
+ - [npm](http://npmjs.org)
 
 
 ## Installation for test with [MtGox](https://mtgox.com)
