@@ -9,7 +9,7 @@
   },
   "bin": {
     "hookio-websocket": "./bin/hookws"
-  }
+  },
   "main": "lib/hookws",
   "engines": {
     "node": ">= v0.4.7"
