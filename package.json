@@ -1,0 +1,18 @@
+{
+  "author": "Daniel Aristizabal <aristizabal.daniel@gmail.com>",
+  "name": "hook.io-ws",
+  "description": "hook for websocket connection"
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cronopio/hook.io-ws.git"
+  },
+  "main": "lib/websocket",
+  "engines": {
+    "node": ">= v0.4.7"
+  },
+  "dependencies": {
+    "hook.io": "0.6.x"
+  }
+  "devDependencies": {}
+}
