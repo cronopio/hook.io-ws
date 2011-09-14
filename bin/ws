@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var WebSocketHook = require('../lib/hookws').HookSocket;
+var WebSocketHook = require('../lib/ws').HookSocket;
 
 var mtgoxTest = new WebSocketHook({
   name: 'mtgox',
@@ -11,7 +11,7 @@ var mtgoxTest = new WebSocketHook({
 
 mtgoxTest.on('websocket::message',function(data){
   if (data.op == 'subscribe'){
-    console.log('Now suscribe to ');
+    console.log('Now suscribe to '+data.channel);
   }
   console.log(data);
 });
