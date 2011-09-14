@@ -8,4 +8,12 @@ var mtgoxTest = new WebSocketHook({
   debug:true
 });
 
+
+mtgoxTest.on('websocket::message',function(data){
+  if (data.op == 'subscribe'){
+    console.log('Now suscribe to ');
+  }
+  console.log(data);
+});
+
 mtgoxTest.start();
