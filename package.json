@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git://github.com/cronopio/hook.io-ws.git"
   },
+  "bin": {
+    "hookio-websocket": "./bin/hookws"
+  }
   "main": "lib/hookws",
   "engines": {
     "node": ">= v0.4.7"
