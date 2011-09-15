@@ -54,6 +54,12 @@ var mtgoxChannels = {
       msg += 'Buy ';
     }
     msg += data.amount + ' '+data.item+ '  @  '+data.price+' '+data.price_currency;
+    if (data.price > this.lastTrade){
+      msg += ' ⇧ ';
+    }
+    if (data.price < this.lastTrade){
+      msg += ' ⇩ ';
+    }
     this.lastTrade = data.price;
     console.log(msg);
   },
