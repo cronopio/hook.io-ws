@@ -9,11 +9,7 @@ var mtgoxTest = new WebSocketHook({
 });
 
 var mtgoxChannels = {
-  channels:[
-    {key:'dbf1dee9-4f2e-4a08-8cb7-748919a71b21', name:'Trades', private:'trade'},
-    {key:'d5f06780-30a8-4a48-a2f8-7ed181b4a13f', name:'MtGox Tick', private: 'ticker'},
-    {key:'24e67e0d-1cad-4cc0-9e7a-f8523ef460fe', name:'All Market', private:'depth'}
-  ],
+  channels: mtgoxTest.channels,
   lastTrade: 0,
   getChannel: function(key){
     var selected = this.channels.filter(function(c){
