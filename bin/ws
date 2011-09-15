@@ -26,11 +26,34 @@ var mtgoxChannels = {
     var ch = this.getChannel(data.channel);
     this['_'+ch.private](data);
   },
-  _depth: function(data){
-    console.log('Cambio en el OrderBook', data.depth);
+  _depth: function(depth){
+    var vol,
+        now  = new Date(),
+        data = depth.depth,
+        msg = '<'+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()+'> ';
+    if (data.volume < 0){
+      // An order has been deleted
+      msg += 'Remove ';
+      vol = data.volume * -1;
+    } else {
+      // An order has been created
+      msg += 'Create ';
+      vol = data.volume;
+    }
+    msg += data.type_str + ' ' +vol + ' @ ' + data.price;
+    console.log(msg);
   },
-  _trade: function(data){
-    console.log('Negocio!', data.trade);
+  _trade: function(trade){
+    var data = trade.trade,
+        time = new Date(data.date),
+        msg = '['+time.getHours()+':'+time.getMinutes()+':'+time.getSeconds()+'] ';
+    if (data.trade_type == 'ask'){
+      msg += 'Sell ';      
+    } else if (data.trade_type == 'bid'){
+      msg += 'Buy ';
+    }
+    msg += data.amount + ' '+data.item+ '  @  '+data.price+' '+data.price_currency;
+    console.log(msg);
   },
   _ticker: function(data){
     console.log('Cambio del Tick', data.ticker);
@@ -41,8 +64,9 @@ var mtgoxChannels = {
 mtgoxTest.on('websocket::message',function(data){
   if (data.op == 'subscribe'){
     console.log('Now suscribe to: %s',mtgoxChannels.getChannel(data.channel).name);
+  } else {
+    mtgoxChannels.showMsg(data);
   }
-  mtgoxChannels.showMsg(data);
 });
 
 mtgoxTest.start();
