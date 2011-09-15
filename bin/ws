@@ -5,7 +5,7 @@ var WebSocketHook = require('../lib/ws').HookSocket;
 var mtgoxTest = new WebSocketHook({
   name: 'mtgox',
   url:'ws://websocket.mtgox.com/mtgox',
-  debug:true
+  debug:false
 });
 
 var mtgoxChannels = {
@@ -14,6 +14,7 @@ var mtgoxChannels = {
     {key:'d5f06780-30a8-4a48-a2f8-7ed181b4a13f', name:'MtGox Tick', private: 'ticker'},
     {key:'24e67e0d-1cad-4cc0-9e7a-f8523ef460fe', name:'All Market', private:'depth'}
   ],
+  lastTrade: 0,
   getChannel: function(key){
     var selected = this.channels.filter(function(c){
       if (c.key == key)
@@ -53,10 +54,17 @@ var mtgoxChannels = {
       msg += 'Buy ';
     }
     msg += data.amount + ' '+data.item+ '  @  '+data.price+' '+data.price_currency;
+    this.lastTrade = data.price;
     console.log(msg);
   },
-  _ticker: function(data){
-    console.log('Cambio del Tick', data.ticker);
+  _ticker: function(tick){
+    var data = tick.ticker;
+    console.log('---------------------');
+    console.log('   Volume: %d      ', data.vol);
+    console.log(' Buy:%d - Sell:%d  ', data.buy, data.sell);
+    console.log(' Max:%d - Min:%d   ', data.high, data.low);
+    console.log(' Last Price: %d    ', this.lastTrade);
+    console.log('---------------------')
   }
 };
 
