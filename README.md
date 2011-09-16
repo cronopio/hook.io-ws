@@ -20,7 +20,9 @@ Based on [Peter Griess](https://github.com/pgriess/node-websocket-client) work. 
 
 ## Development Example
 Now you can require the `hook.io-ws` module and instance a new Hook that try to connect to `url` using *WebSockets*
-```
+
+```javascript
+
 #!/usr/bin/env node
 
 var WebSocketHook = require('hook.io-ws').HookSocket;
@@ -32,10 +34,13 @@ var mtgoxTest = new WebSocketHook({
 });
 
 mtgoxTest.start();
+
 ```
 
 Or you can use the Hook.io Magic
-```
+
+```javascript
+
 /*
  * Hook class for interacting with mtgox.com
  */
