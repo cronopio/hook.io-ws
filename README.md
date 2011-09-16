@@ -3,6 +3,9 @@ Hook listening messages on *WebSocket* client connection.
 
 Based on [Peter Griess](https://github.com/pgriess/node-websocket-client) work. [WebSocket Nodejs Client](https://github.com/pgriess/node-websocket-client)
 
+## Contributors
+ - [Marak Squires](http://github.com/marak)
+
 ## Requirements
  - [nodejs](http://nodejs.org)
  - [npm](http://npmjs.org)
