@@ -1,8 +1,14 @@
 {
   "author": "Daniel Aristizabal <aristizabal.daniel@gmail.com>",
+  "contributors": [
+    {
+      "name": "Marak Squires",
+      "email": "marak.squires@gmail.com"
+    }
+  ],
   "name": "hook.io-ws",
-  "description": "hook for websocket connection",
-  "version": "0.0.1",
+  "description": "hook.io hook for websocket connection",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/cronopio/hook.io-ws.git"
