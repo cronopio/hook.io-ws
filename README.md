@@ -1,3 +1,8 @@
+# Node.js Compatibility
+There is some issues with the code from Peter, and with the new improvements on node.js 0.6 this lib work correctly only with node.js 0.4
+
+Please be sure of use node.js 0.4 (recommended 0.4.12) before use this lib.
+
 ## hook.io-ws
 Hook listening messages on *WebSocket* client connection.
 
@@ -16,7 +21,7 @@ Based on [Peter Griess](https://github.com/pgriess/node-websocket-client) work. 
     npm install hook.io-ws
 
 ## Usage
-    hookio-websocket
+    hookio-ws
 
 ## Development Example
 Now you can require the `hook.io-ws` module and instance a new Hook that try to connect to `url` using *WebSockets*
