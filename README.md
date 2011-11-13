@@ -1,5 +1,5 @@
 # Node.js Compatibility
-There is some issues with the code from Peter, and with the new improvements on node.js 0.6 this lib don't work correctly.Work fine only with node.js 0.4
+There is some issues with the code from Peter, and with the new improvements on node.js 0.6 this lib __don't work__ correctly.Work fine only with node.js 0.4
 
 Please be sure of use node.js 0.4 (recommended 0.4.12) before use this lib.
 
