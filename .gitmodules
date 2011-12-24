@@ -1,0 +1,3 @@
+[submodule "3rd/socket.io-client"]
+	path = 3rd/socket.io-client
+	url = https://github.com/kazuyukitanimura/socket.io-client.git

@@ -1,9 +1,8 @@
-# Node.js Compatibility
-There is some issues with the code from Peter, and with the new improvements on node.js 0.6 this lib __don't work__ correctly.Work fine only with node.js 0.4
+# Changes
 
-Please be sure of use node.js 0.4 (recommended 0.4.12) before use this lib.
+I made this fork to reuse socket.io-client.  It wasn't as simple as I'd hoped because LearnBoost hasn't updated the official branch with WSS/HTTPS functionality.  For this reason, I am referencing the [kazuyukitanimura](https://github.com/kazuyukitanimura/socket.io-client) branch of socket.io-client.
 
-## hook.io-ws
+# hook.io-ws
 Hook listening messages on *WebSocket* client connection.
 
 Based on [Peter Griess](https://github.com/pgriess/node-websocket-client) work. [WebSocket Nodejs Client](https://github.com/pgriess/node-websocket-client)
@@ -18,7 +17,12 @@ Based on [Peter Griess](https://github.com/pgriess/node-websocket-client) work. 
 
 
 ## Installation
-    npm install hook.io-ws
+
+I don't want to pollute npm since this is a branch, so for now, here is how you get it to work:
+
+- clone this repo
+- cd into it
+- npm install 3rd/socket.io-client
 
 ## Usage
     hookio-ws
@@ -34,7 +38,7 @@ var WebSocketHook = require('hook.io-ws').HookSocket;
 
 var mtgoxTest = new WebSocketHook({
   name: 'mtgox',
-  url:'ws://websocket.mtgox.com/mtgox',
+  url:'https://socketio.mtgox.com/mtgox',
   debug:false
 });
 
@@ -61,7 +65,7 @@ var MtgoxHook = exports.MtgoxHook = function(options){
       "name": "mtgox-ws-hook",
       "type": "ws", // Doing this. Hook.io will look for hook.io-ws 
       "debug": "false",
-      "url": "ws://websocket.mtgox.com/mtgox"
+      "url":'https://socketio.mtgox.com/mtgox',
     }], function(err){
       // spawn ready
       self.on('*::websocket::message',function(message){
