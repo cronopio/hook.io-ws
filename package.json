@@ -18,10 +18,10 @@
   },
   "main": "lib/ws",
   "engines": {
-    "node": "0.4"
+    "node": "0.6"
   },
   "dependencies": {
-    "hook.io": "0.7.x"
+    "hook.io": ">0.7.x"
   },
   "devDependencies": {}
 }
