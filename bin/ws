@@ -4,7 +4,7 @@ var WebSocketHook = require('../lib/ws').HookSocket;
 
 var mtgoxTest = new WebSocketHook({
   name: 'mtgox',
-  url:'ws://websocket.mtgox.com/mtgox',
+  url:'https://socketio.mtgox.com/mtgox',
   debug:false
 });
 
